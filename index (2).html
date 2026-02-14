@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Valentine 💖</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow-x: hidden;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: red;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
+
+h1 {
+    margin-top: 40px;
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px 10px red;
+}
+
+.gallery {
+    margin: 30px;
+}
+
+.gallery img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 10px;
+    transition: transform 0.5s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    background: red;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: darkred;
+    transform: scale(1.1);
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 22px;
+    color: white;
+    display: none;
+}
+#message {
+    margin-top: 30px;
+    font-size: 22px;
+    color: white;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    animation: slideUp 2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Floating Moving Images */
+.floating-img {
+    position: fixed;
+    width: 120px;
+    border-radius: 20px;
+    animation: floatMove 6s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+@keyframes floatMove {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+    25% {
+        transform: translateY(-20px) translateX(15px);
+    }
+    50% {
+        transform: translateY(0px) translateX(-15px);
+    }
+    75% {
+        transform: translateY(20px) translateX(10px);
+    }
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<h1>Happy Valentine’s Day 💕</h1>
+
+<div class="gallery">
+    <!-- Replace with your photos -->
+    <img src="image.png">
+    <img src="image copy.png">
+    <img src="image copy 2.png">
+    <img src="image copy 3.png" class="floating-img" style="top:10%; left:5%; animation-duration:7s;">
+<img src="image copy 4.png" class="floating-img" style="top:60%; left:80%; animation-duration:8s;">
+<img src="image copy 5.png" class="floating-img" style="top:30%; left:70%; animation-duration:6s;">
+<img src="image copy 6.png" class="floating-img" style="top:75%; left:20%; animation-duration:9s;">
+
+</div>
+
+<button onclick="showLove()">Click for Surprise 💌</button>
+
+
+<div id="message">
+    Our friendship is not just about the laughs we share,
+    but about the comfort we feel in each other’s presence.
+    It’s the Infinity talks, the silly jokes, the unspoken understanding,
+    and the way we always stand by each other no matter what.
+
+    You are not just my friend —
+    you are my safe place, my happiness, and my favorite person to create memories with.
+    Every moment with you feels warm, special, and unforgettable.
+
+    Thank you for being my constant, my support system,
+    and the most beautiful part of my life
+    kani nijam cheputhunna nenu entha la neeku addict ayyano nake telusu like 
+    naku edi anna badha ,Happinessvachina first gurthu vachedi nuv like emo ee madhya i cant image 
+    a life without u annipisthundi ante na future lo nuv lekunda nenu ela undagalanu annipisthundi
+    emo le life ettu poyna nenu nuv lekunda unda lenu Thanks for cmg into my life andd 
+    I LOVE YOUU sooooo
+    sooooo much 💕
+</div>
+
+
+<!-- Add your song file -->
+<audio id="loveSong" src="07 - Yedemaina Sakhi.mp3"></audio>
+
+<script>
+function showLove() {
+    const msg = document.getElementById("message");
+    msg.style.display = "block";
+    msg.style.animation = "slideUp 2s ease forwards";
+    document.getElementById("loveSong").play();
+}
+
+
+/* Create Floating Hearts */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.innerHTML = "💖";
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 500);
+</script>
+
+</body>
+</html>
